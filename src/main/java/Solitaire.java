@@ -11,9 +11,12 @@ public class Solitaire implements Game {
     private final int TABLEAU_MAX_SIZE = 7;
     private final int FOUNDATION_MAX_SIZE = 4;
     private final int STOCK_MAX_SIZE = 1;
-    private List<List<Card>> tableau = new ArrayList<List<Card>>();
+    protected List<List<Card>> tableau = new ArrayList<List<Card>>();
     private List<List<Card>> foundation = new ArrayList<List<Card>>();
     private List<Card> stock = new ArrayList<Card>();
+
+    public List<Card> getDeck() { return deck; }
+    public List<Card> getStock() { return stock; }
 
     public void startGame() {
         buildDeck();
@@ -37,11 +40,6 @@ public class Solitaire implements Game {
             deck.get(randomFinish).setNumber(tmpLocationCard.getNumber());
             deck.get(randomFinish).setSuite(tmpLocationCard.getSuite());
         }
-//        for( int i = 0; i < deck.size(); i++) {
-//            System.out.print(deck.get(i).getNumber());
-//            System.out.print(" " + deck.get(i).getSuite());
-//            System.out.println(" " + deck.get(i).isFaceUp());
-//        }
     }
 
     public void buildDeck() {
@@ -71,7 +69,7 @@ public class Solitaire implements Game {
         }
     }
 
-    private void deal() {
+    public void deal() {
         for(int i = 0; i < TABLEAU_MAX_SIZE; i++) {
             List<Card> set = new ArrayList<Card>();
             for(int x = 0; x <= i; x++) {
@@ -85,17 +83,6 @@ public class Solitaire implements Game {
             tableau.add(i, set);
         }
         stock = deck;
-
-        for(int i = 0; i < TABLEAU_MAX_SIZE; i++) {
-            for (int x = 0; x < tableau.get(i).size(); x++) {
-                System.out.print(tableau.get(i).get(x).getNumber() + ", ");
-                System.out.print(tableau.get(i).get(x).getSuite() + ", ");
-                System.out.println(tableau.get(i).get(x).isFaceUp() + ", ");
-            }
-            System.out.println("---------------------------------");
-        }
-
-        System.out.println(stock);
     }
 
     public void displayCard(Card card) {
@@ -105,7 +92,6 @@ public class Solitaire implements Game {
                               "|      "+card.getSuite().getSymbol()+"     |\n" +
                               "|            |\n" +
                               "|____________|";
-        System.out.print(stockDisplay);
         System.out.print(stockDisplay);
     }
 }
