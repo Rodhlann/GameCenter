@@ -1,3 +1,5 @@
+package GameCenter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -11,9 +13,9 @@ public class Solitaire implements Game {
     private final int TABLEAU_MAX_SIZE = 7;
     private final int FOUNDATION_MAX_SIZE = 4;
     private final int STOCK_MAX_SIZE = 1;
-    protected List<List<Card>> tableau = new ArrayList<List<Card>>();
-    private List<List<Card>> foundation = new ArrayList<List<Card>>();
-    private List<Card> stock = new ArrayList<Card>();
+    public List<List<Card>> tableau = new ArrayList<List<Card>>();
+    public List<List<Card>> foundation = new ArrayList<List<Card>>();
+    public List<Card> stock = new ArrayList<Card>();
 
     public List<Card> getDeck() { return deck; }
     public List<Card> getStock() { return stock; }

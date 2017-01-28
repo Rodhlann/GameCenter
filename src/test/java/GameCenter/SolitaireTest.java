@@ -1,3 +1,7 @@
+package GameCenter;
+
+import GameCenter.Card;
+import GameCenter.Solitaire;
 import junit.framework.Assert;
 import org.junit.Test;
 
@@ -55,8 +59,8 @@ public class SolitaireTest {
                 if(x == i) {}
                 else if(oldCard.getNumber() == newCard.getNumber() &&
                         oldCard.getSuite() == newCard.getSuite()) {
-                    System.out.println("Old Card: " + oldCard.getNumber() + "" + oldCard.getSuite());
-                    System.out.println("New Card: " + newCard.getNumber() + "" + newCard.getSuite());
+                    System.out.println("Old GameCenter.Card: " + oldCard.getNumber() + "" + oldCard.getSuite());
+                    System.out.println("New GameCenter.Card: " + newCard.getNumber() + "" + newCard.getSuite());
                     return false;
                 }
             }
