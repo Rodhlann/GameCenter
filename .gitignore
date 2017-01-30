@@ -1,3 +1,11 @@
 /target
-/lib
+gamecenter-parent/lib
 /.idea
+gamecenter-impl/gamecenter-impl.iml
+gamecenter-ui/gamecenter-ui.iml
+gamecenter-parent/gamecenter-parent.iml
+gamecenter-impl/lib
+gamecenter-impl/target
+gamecenter-parent/target
+gamecenter-ui/target
+GameCenter.iml
